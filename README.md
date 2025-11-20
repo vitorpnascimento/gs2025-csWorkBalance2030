@@ -5,11 +5,6 @@ Aplicativo **WPF (.NET)** que usa **POO (herança + polimorfismo)** e armazename
 O objetivo é discutir o **futuro do trabalho** a partir da **saúde mental e do equilíbrio entre vida pessoal e profissional**, especialmente em cenários de trabalho remoto e híbrido.
 
 ---
-## 👥 Integrantes
- 
-- Vitor Pinheiro – RM 553693  
-- Gabriel Leão – RM 552642
----
 
 ## Sumário
 
