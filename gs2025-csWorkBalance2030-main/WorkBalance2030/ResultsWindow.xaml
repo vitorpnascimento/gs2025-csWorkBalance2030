@@ -1,0 +1,34 @@
+﻿<Window x:Class="WorkBalance2030.ResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WorkBalance 2030 - Resultados" Height="500" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Resultados de Bem-Estar e Risco de Burnout"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="txtResultados"
+                 Grid.Row="1"
+                 Margin="0,5,0,5"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                 IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnProcessar" Content="Processar"
+                    Click="btnProcessar_Click" Margin="0,0,5,0" Width="100"/>
+            <Button x:Name="btnExportar" Content="Exportar .txt"
+                    Click="btnExportar_Click" Margin="0,0,5,0" Width="100"/>
+            <Button x:Name="btnCopiar" Content="Copiar"
+                    Click="btnCopiar_Click" Margin="0,0,5,0" Width="100"/>
+            <Button x:Name="btnFechar" Content="Fechar"
+                    Click="btnFechar_Click" Width="80"/>
+        </StackPanel>
+    </Grid>
+</Window>

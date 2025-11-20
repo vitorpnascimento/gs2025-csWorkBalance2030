@@ -1,0 +1,97 @@
+﻿<Window x:Class="WorkBalance2030.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WorkBalance 2030 - Cadastro de Perfis" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="WorkBalance 2030 - Cadastro de Perfis"
+                   FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <!-- Formulário -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Coluna 1: Dados básicos -->
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Nome:"/>
+                <TextBox x:Name="txtNome" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Idade:"/>
+                <TextBox x:Name="txtIdade" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Modo de trabalho:"/>
+                <ComboBox x:Name="cmbModoTrabalho" Margin="0,0,0,5"/>
+            </StackPanel>
+
+            <!-- Coluna 2: Rotina -->
+            <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                <TextBlock Text="Carga horária semanal (h):"/>
+                <TextBox x:Name="txtCargaHoraria" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Horas de sono por noite:"/>
+                <TextBox x:Name="txtHorasSono" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Pausas por dia:"/>
+                <TextBox x:Name="txtPausasPorDia" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Intensidade de uso de tecnologia (0-10):"/>
+                <TextBox x:Name="txtIntensidadeTecnologia" Margin="0,0,0,5"/>
+            </StackPanel>
+
+            <!-- Coluna 3: Contexto de saúde -->
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Contexto de saúde:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <CheckBox x:Name="chkFilhosPequenos" Content="Tem filhos pequenos" Margin="0,0,0,5"/>
+                <CheckBox x:Name="chkTurnosNoturnos" Content="Trabalha em turnos noturnos" Margin="0,0,0,5"/>
+                <CheckBox x:Name="chkApoioPsicologico" Content="Tem apoio psicológico" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Nível de pressão por metas (0-10):" Margin="0,10,0,0"/>
+                <TextBox x:Name="txtPressaoMetas" Margin="0,0,0,5"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Buffer e botões -->
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Preview do buffer -->
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Buffer de perfis cadastrados:"/>
+                <TextBox x:Name="txtBufferPreview"
+                         Margin="0,5,0,5"
+                         Height="150"
+                         VerticalScrollBarVisibility="Auto"
+                         HorizontalScrollBarVisibility="Auto"
+                         IsReadOnly="True"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <!-- Botões -->
+            <StackPanel Grid.Column="1">
+                <Button x:Name="btnAdicionarBuffer" Content="Adicionar ao buffer"
+                        Click="btnAdicionarBuffer_Click" Margin="0,0,0,5"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBlock Text="Remover posição:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtRemoverPos" Width="40" Margin="5,0,0,0"/>
+                    <Button x:Name="btnRemover" Content="Remover" Click="btnRemover_Click" Margin="5,0,0,0"/>
+                </StackPanel>
+                <Button x:Name="btnLimparBuffer" Content="Limpar buffer"
+                        Click="btnLimparBuffer_Click" Margin="0,0,0,5"/>
+                <Button x:Name="btnResultados" Content="Ir para resultados"
+                        Click="btnResultados_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
